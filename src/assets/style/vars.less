@@ -1,0 +1,109 @@
+/****  定义变量 *****/
+
+// 标题字体颜色
+@importTextGray: #222222;
+@titleGray: #3c3c3c;
+
+// 段落文字颜色
+@textGray: #666666;
+@assistGray: #999999;
+@assistGray2: #c5c5c5;
+@assistGray3: #f2f2f2;
+@tagTextGray: #dddddd;
+
+@borderGray: #ebebeb;
+@bacGray: #f8f9fc;   // 背景色
+
+@assistRed: #FD6784;
+
+@white: #ffffff;
+
+
+
+
+// 定义背景图，backgroundSize: 100% 100%;
+.background100 (@imgurl) {
+  background: url('@{imgurl}') no-repeat center;
+  background-size: 100% 100%;
+}
+
+// 定义背景图，backgroundSize 自定义，且存在默认值
+.backgroundSize (@imgurl, @sizeX: 100%, @sizeY: 100%){
+  background: url('@{imgurl}') no-repeat center;
+  background-size: @sizeX @sizeY
+}
+
+.backgroundImg (@imgurl){
+  background-image: url('@{imgurl}');
+}
+
+// 定义弹性盒子
+.flex (@display: flex, @flex: 1 0 auto, @flexFlow: row nowrap, @justify: center, @align: center) {
+  display: @display; // flex/ inline-flex
+  flex: @flex;   // 盒子扩展模式, flex-grow, flex-shrink, flex-basis 的缩写
+  flex-flow: @flexFlow;  // 盒子的排列方式, flex-direction, flex-wrap 的缩写
+  justify-content: @justify;    // justify-content 和 align-item  盒子的对齐方式，水平对齐，垂直对齐
+  align-items: @align;
+}
+
+.flexCenter(@justify: center, @align: center){
+  justify-content: @justify;
+  align-items: @align;
+}
+
+// 定义文字超出一行，出现...
+.textOverflow (){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 定义文字超出制定行数，出现...
+.textOverflowClamp (@clamp: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @clamp;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.font1(@font-size, @color){
+  font-size: @font-size;
+  color: @color;
+}
+
+.font2(@font-size, @color, @lineHeight){
+  font-size: @font-size;
+  color: @color;
+  line-height: @lineHeight;
+}
+
+.font3(@fontSize, @color, @lineHeight, @align){
+  font-size: @fontSize;
+  color: @color;
+  line-height: @lineHeight;
+  text-align: @align;
+}
+
+.fontStyle(@fontSize, @color, @lineHeight, @align, @fontWeight: bold){
+  font-size: @fontSize;
+  color: @color;
+  line-height: @lineHeight;
+  text-align: @align;
+  font-weight: bold;
+}
+
+.w-h(@w, @h){
+  width: @w;
+  height: @h;
+}
+
+.clearFloat{
+  display: block;
+  content: '';
+  clear: both;
+  font-size: 0;
+  line-height: 1;
+}
+
+/****  定义变量 *****/
